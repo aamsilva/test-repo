@@ -1,0 +1,5 @@
+# Runtime dependencies (none for this simple package)
+
+# Dev dependencies
+pytest>=7.0
+pytest-cov>=4.0
