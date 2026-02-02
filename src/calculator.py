@@ -23,9 +23,11 @@ def multiply(a: Number, b: Number) -> Number:
 def divide(a: Number, b: Number) -> Number:
     """Divide a by b.
 
-    BUG: No check for division by zero!
+    Raises:
+        ZeroDivisionError: If b is zero.
     """
-    # BUG: Should check if b == 0 and raise ZeroDivisionError with clear message
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
     return a / b
 
 
@@ -58,9 +60,11 @@ def factorial(n: int) -> int:
 def average(numbers: list[Number]) -> float:
     """Calculate average of a list of numbers.
 
-    BUG: No check for empty list!
+    Raises:
+        ValueError: If the list is empty.
     """
-    # BUG: Should check if list is empty
+    if not numbers:
+        raise ValueError("Cannot calculate average of empty list")
     return sum(numbers) / len(numbers)
 
 
