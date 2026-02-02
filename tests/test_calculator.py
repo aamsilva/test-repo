@@ -52,10 +52,9 @@ class TestDivide:
         assert divide(7, 2) == 3.5
 
     def test_divide_by_zero_raises_error(self):
-        """BUG: This test will FAIL - divide doesn't handle zero properly."""
-        with pytest.raises(ZeroDivisionError) as excinfo:
+        """Test that divide raises ValueError when divisor is zero."""
+        with pytest.raises(ValueError) as excinfo:
             divide(10, 0)
-        # The bug: no custom error message is provided
         assert "Cannot divide by zero" in str(excinfo.value)
 
     def test_divide_zero_by_number(self):
